@@ -1,0 +1,19 @@
+﻿@model IEnumerable<GospelInnMinistry.Models.Medium>
+
+ 
+ 
+ 
+@foreach (var item in Model)
+{
+    @*<div class="col-md-4 col-sm-4  format-image isotope-item"  >*@
+        <div class="grid-item-inner"> <a href="@Html.DisplayFor(modelItem => item.ContentLocation)" data-rel="prettyPhoto" class="media-box"> <img src="@Html.DisplayFor(modelItem => item.ContentLocation)" alt=""> <span class="zoom"><span class="icon"><i class="icon-image"></i></span></span></a> </div>
+    @*</div>*@
+    <br/>
+}
+
+ 
+ 
+
+
+
+

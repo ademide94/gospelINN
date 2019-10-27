@@ -1,0 +1,35 @@
+﻿@model IEnumerable<GospelInnMinistry.Models.Group>
+
+
+
+
+<ul class="sort-destination isotope" data-sort-id="events" style="position: relative; overflow: hidden;">
+
+	@foreach (var item in Model)
+	{
+		if (item.GroupName == "Strasoda" || item.GroupName == "Living Voices" || item.GroupName == "Alabaster" || item.GroupName == "GospelInnChildren" || item.GroupName == "VineDrama" || item.GroupName == "GospelInnLiterature")
+		{
+			<li class="col-md-4 col-sm-6 event-list-item event-item  grid-item format-standard  isotope-item">
+				<div class="grid-item-inner  ">
+					<a href="@item.Link">
+
+						<div class="grid-content">
+							<h3><a href="@item.Link" class="event-title">@Html.DisplayFor(modelItem => item.GroupName)</a></h3>
+						</div>
+						<div class="grid-footer   clearfix" style="background-color:lightblue">
+
+							@Html.DisplayFor(modelItem => item.Description)
+
+						</div>
+					</a>
+
+				</div>
+			</li>
+		}
+
+
+	}
+
+</ul>
+
+

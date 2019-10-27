@@ -1,0 +1,88 @@
+﻿@model GospelInnMinistry.Models.GroupEventViewModel
+
+@{
+    ViewBag.Title = "Solid Rock Schools";
+}
+ 
+
+<!-- End Site Header -->
+<!-- Start Page Header -->
+<div class="page-header parallax clearfix" style="background-color:#333">
+    <div class="page-header-overlay" style="background-image:url();"></div>
+    <div class="title-subtitle-holder">
+        <div class="title-subtitle-holder-inner">
+            <h2>Solid Rock Schools</h2>
+            @*<hr class="sm">
+                <span class="subtitle">Way to show what is going on in our church</span>*@
+        </div>
+    </div>
+</div>
+<!-- End Page Header -->
+<!-- Breadcrumbs -->
+<div class="lgray-bg breadcrumb-cont">
+    <div class="container">
+        <ol class="breadcrumb">
+            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+            <li class="active">Solid Rock Schools</li>
+        </ol>
+    </div>
+</div>
+<!-- Start Body Content -->
+<div class="main" role="main">
+    <div id="content" class="content full">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="posts-listing">
+                        <article class="post-list-item format-standard">
+                            <div class="post-media">
+
+                                
+                                <a><img src="../images/branches/istockphoto-669853806-612x612.jpg" alt="" class="post-thumb"></a>
+                            </div>
+                            <div class="post-excerpt">
+                                <p>
+                                    This project has the objective of providing opportunities for the kids in
+                                    the local community to really go to school via sound, using audio visual
+                                    aids, creating opportunities with computers, literacy, language empowerment
+                                    in French and English. Challenging problems includes raising classrooms,
+                                    land acquisition schemes etc. Be a part.
+                                </p>
+
+                            </div>
+                        </article>
+
+
+                    </div>
+
+                </div>
+                <div class="col-md-4">
+
+
+                    <div class="tabs">
+                        <ul class="nav nav-tabs">
+                            <li class="active"> <a data-toggle="tab" href="#sampletab1">FOR ENQUIRES</a> </li>
+
+                            @*<li class="active"> <a data-toggle="tab" href="#sampletab3"> Sample Tab #3 </a> </li>*@
+                        </ul>
+                        <div class="tab-content">
+							<div id="sampletab1" class="tab-pane active">
+								CALL 1800-989-990
+							</div>
+
+                            @*<div id="sampletab3" class="tab-pane active">
+                <p>3</p>
+            </div>*@
+                            @*</div>*@
+
+
+
+                        </div>
+
+                    </div>
+            </div>
+            @*<div class="col-md-8"> @{Html.RenderPartial("_UpcomingEvents", Model._event);}   </div>*@
+
+        </div>
+    </div>
+</div>

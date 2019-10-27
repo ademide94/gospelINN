@@ -1,0 +1,148 @@
+﻿@model GospelInnMinistry.Models.GroupEventViewModel
+
+@{
+    ViewBag.Title = "Strasoda";
+}
+
+
+@*<div>
+    <h4>Group</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.GroupName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GroupName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Event.EventName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Event.EventName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>*@
+
+
+<!-- End Site Header -->
+<!-- Start Page Header -->
+<div class="page-header parallax clearfix" style="background-color:#333">
+    <div class="page-header-overlay" style="background-image:url();"></div>
+    <div class="title-subtitle-holder">
+        <div class="title-subtitle-holder-inner">
+            <h2>STRASODA</h2>
+            @*<hr class="sm">
+                <span class="subtitle">Way to show what is going on in our church</span>*@
+        </div>
+    </div>
+</div>
+<!-- End Page Header -->
+<!-- Breadcrumbs -->
+<div class="lgray-bg breadcrumb-cont">
+    <div class="container">
+        <ol class="breadcrumb">
+            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+            <li class="active">STRASODA</li>
+        </ol>
+    </div>
+</div>
+<!-- Start Body Content -->
+<div class="main" role="main">
+    <div id="content" class="content full">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="posts-listing">
+                        <article class="post-list-item format-standard">
+                            <div class="post-media">
+ 
+                                <a ><img src="../images/branches/DSC_0900.JPG" alt="" class="post-thumb"></a>
+                            </div>
+                            <div class="post-excerpt">
+
+                             
+                                <p>
+                                    STRASODA stands for Strategic Sons and Daughters. The vision of the ‘move’
+                                    is to mobilize and equip young people to take over from the ageing heroes
+                                    of faith. Many of the fathers who explored some of the darkest regions of
+                                    the world, who conquered kingdoms and revived lands are ageing and there is
+                                    a need to raise a generation that will take the baton and run with vigor.
+                                    We need to preserve our heritage and present it to the upcoming generation
+                                    unaffected.
+                                </p>
+                                <p>
+                                    It is our desire to search for lost youths; strengthen dying ones; revive
+                                    the backslidden and set in motion those that have been made strong by
+                                    grace, to contend for the faith.
+                                </p>
+                                <p>
+                                    STRASODA mobilization aims at creating a community for strategic ministry
+                                    for sons and daughters born in our commission or from other backgrounds who
+                                    have established relationship with our mentoring opportunities at Gospel
+                                    inn.
+                                </p>
+                                <p>
+                                    <strong>STRASODA Gathering</strong>
+                                    holds every last weekend of August into first week of September.
+                                </p>
+
+
+                            </div>
+                        </article>
+
+                        <div> @{Html.RenderPartial("_UpcomingEvents", Model._event);}   </div>
+                    </div>
+
+                </div>
+                <div class="col-md-4">
+
+                    <div class="tabs">
+
+                        <ul class="nav nav-tabs">
+                            <li class="active"> <a data-toggle="tab" href="#sampletab1">PICTURES</a> </li>
+                            <li class=""> <a data-toggle="tab" href="#sampletab2">EXCOS</a> </li>
+                            @*<li class="active"> <a data-toggle="tab" href="#sampletab3"> Sample Tab #3 </a> </li>*@
+                        </ul>
+                        <div class="tab-content">
+                            <div id="sampletab1" class="tab-pane active">
+                                @{Html.RenderPartial("_PhotoGallery", Model._grouppictures);}
+                                @Html.ActionLink("More pictures", "Gallery", "Media")
+                            </div>
+                            <div id="sampletab2" class="tab-pane">
+                                .....
+                            </div>
+                            @*<div id="sampletab3" class="tab-pane active">
+                <p>3</p>
+            </div>*@
+                            @*</div>*@
+
+
+
+                        </div>
+
+
+                    </div>
+            </div>
+           
+
+        </div>
+    </div>
+</div>
+<!-- End Body Content -->

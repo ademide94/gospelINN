@@ -1,0 +1,122 @@
+﻿@model GospelInnMinistry.Models.picturesViewModel
+
+
+
+<div class="page-header parallax clearfix" style="background-image:url(http://placehold.it/1200x300&amp;text=IMAGE+PLACEHOLDER);">
+    <div class="title-subtitle-holder">
+        <div class="title-subtitle-holder-inner">
+            <h2>Upload Images</h2>
+        </div>
+    </div>
+</div>
+<!-- End Page Header -->
+<!-- Breadcrumbs -->
+<div class="lgray-bg breadcrumb-cont">
+    <div class="container">
+        <ol class="breadcrumb">
+           
+            <li>@Html.ActionLink("Home", "Index","Home")</li>
+            <li>@Html.ActionLink("Admin Page","Index", "Admin")</li>
+       
+            <li class="active">Upload Images</li>
+        </ol>
+    </div>
+</div>
+<!-- Start Body Content -->
+<div class="main" role="main">
+    <div id="content" class="content full">
+        <div class="container">
+            <div>
+                @using (Html.BeginForm("UploadImages", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div style="text-align:center">
+           
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        
+ 
+                            @*@Html.LabelFor(model => model.files, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                           
+                            
+                               
+                        <div>
+                            @Html.DropDownList("Group", new List<SelectListItem>
+{
+   new SelectListItem{ Text="Group", Value = "" },
+   new SelectListItem{ Text="Strasoda", Value = "1" },
+   new SelectListItem{ Text="Living Voices", Value = "2" },
+   new SelectListItem{ Text="Alabaster", Value = "3" },
+   new SelectListItem{ Text="Gospel Inn Literature", Value = "4" },
+   new SelectListItem{ Text="Gospel Inn Children", Value = "5" },
+   new SelectListItem{ Text="Turning Point Radio", Value = "6" },
+   new SelectListItem{ Text="Vine Drama", Value = "7" },
+	new SelectListItem{ Text="Normal", Value = "8" },
+
+})
+                          
+
+                        </div>
+                        @Html.ValidationMessageFor(model => model.Group, "", new { @class = "text-danger" })
+                <br/>
+                      
+                        <div class="form-group">
+                            <div class="row">
+                                <div  class="col-md-3"><hr/></div>
+                                <div  class="col-md-6">
+                            <div >
+
+                                @Html.TextBoxFor(model => model.files, "", new { @type = "file", @multiple = "multiple" , @class ="center-block" })
+
+
+
+                            </div>
+
+                                </div>
+                                <div  class="col-md-3"><hr/></div>
+                            </div>
+                            @Html.ValidationMessageFor(model => model.files, "", new { @class = "text-danger" })
+                            <br/>
+                                <input type="submit" value="Upload" class="btn btn-primary" />
+                        
+                        </div>
+
+                   
+
+                        
+
+                    </div>
+                <div class="form-group">
+    <div>
+
+        <div class="col-md-12 appear-animation bounceInRight appear-animation-visible" data-appear-animation="bounceInRight">
+
+            @{ if (ViewBag.UploadStatus != null)
+                {  <div class="alert alert-standard fade in"> <a class="close" data-dismiss="alert" href="#">×</a> <strong>@ViewBag.UploadStatus</strong> </div>
+
+                }
+            }
+
+        </div>
+
+
+    </div>
+</div>
+                }
+                <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+                <script src="~/Scripts/jquery.validate.min.js"></script>
+                <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>  
+
+
+
+
+                <div>
+                    @Html.ActionLink("Back", "Index")
+                </div>
+
+
+                
+            </div>
+        </div>
+    </div>
+</div>

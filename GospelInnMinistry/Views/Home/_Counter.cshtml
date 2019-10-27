@@ -1,0 +1,78 @@
+﻿@model GospelInnMinistry.Models.Event
+
+<script src="~/js/jquery-2.0.0.min.js"></script>
+
+
+
+<script type="text/javascript">
+
+    // Set the date we're counting down to
+
+    var dt = '@Html.Raw(HttpUtility.JavaScriptStringEncode(ViewBag.Datestring))'
+    var countDownDate = (new Date(dt).getTime())
+  
+    // Update the count down every 1 second
+    var x = setInterval(function () {
+
+        // Get todays date and time
+        var now = new Date().getTime();
+
+        // Find the distance between now and the count down date
+        
+     
+        var distance = (countDownDate - now)
+  
+    
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("demo").innerHTML = "EXPIRED";
+        }
+
+        document.getElementById("days").innerHTML = days;
+        document.getElementById("hours").innerHTML = hours;
+        document.getElementById("minutes").innerHTML = minutes;
+        document.getElementById("seconds").innerHTML = seconds;
+        // If the count down is finished, write some text
+      
+    }, 1000);
+</script>
+
+
+<div class="row">
+    <div class="col-md-5 col-sm-5">
+        <span class="label label-primary">Upcoming Event</span>
+        <h3><a href="single-event.html" class="event-title">@Model.EventName.ToString()</a></h3>
+        <span class="meta-data">On <span class="event-date">@Model.StartDate.Value.Date.ToShortDateString().ToString()</span> by <span class="event-time">@Model.StartDate.Value.ToShortTimeString()</span> at</span><span class="meta-data event-location"> <span class="event-location-address">@Model.Location.ToString()</span></span>
+    </div>
+    <div class="col-md-5 col-sm-7">
+        <div id="counter" class="counter clearfix" data-date="July 13, 2015">
+            <div class="timer-col"> <span id="days"></span> <span class="timer-type">Days</span> </div>
+            <div class="timer-col"> <span id="hours"></span> <span class="timer-type">Hours</span> </div>
+            <div class="timer-col"> <span id="minutes"></span> <span class="timer-type">Minutes</span> </div>
+            <div class="timer-col"> <span id="seconds"></span> <span class="timer-type">Seconds</span> </div>
+        </div>
+    </div>
+    <div class="col-md-2 text-align-right">
+        <ul class="action-buttons">
+            <li title="Share event"><a href="" data-trigger="focus" data-placement="top" data-content="" data-toggle="popover" data-original-title="Share Event" class="event-share-link"><i class="icon-share btn-lg"></i></a></li>
+        <li>  </li> <li> </li>   @*<li title="Get directions" class="hidden-xs"><a href="#" class="cover-overlay-trigger event-direction-link"><i class="icon-compass"></i></a></li>
+            <li title="Contact event manager"><a href="#" data-toggle="modal" data-target="#Econtact" class="event-contact-link"><i class="icon-mail"></i></a></li>*@
+        </ul>
+       @*<a href="#" class="btn btn-primary btn-sm event-tickets event-register-button">Register</a>*@
+    </div>
+</div>
+
+
+
+
+
+
+
+
+

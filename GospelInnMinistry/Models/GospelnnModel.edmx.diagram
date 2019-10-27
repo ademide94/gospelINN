@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ea9773a6037d44bc95002372f5c6d95a" Name="Diagram1">
+        <EntityTypeShape EntityType="GospeLInnModel.EventRegistration" Width="1.5" PointX="5.25" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GospeLInnModel.Event" Width="1.5" PointX="8.25" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="GospeLInnModel.Group" Width="1.5" PointX="3" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GospeLInnModel.Medium" Width="1.5" PointX="5.25" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="GospeLInnModel.Role" Width="1.5" PointX="0.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="GospeLInnModel.UserGroup" Width="1.5" PointX="5.25" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="GospeLInnModel.User" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
+        <AssociationConnector Association="GospeLInnModel.FK_EventRegistration_Events" ManuallyRouted="false" />
+        <AssociationConnector Association="GospeLInnModel.FK_EventRegistration_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="GospeLInnModel.FK_Events_Groups" ManuallyRouted="false" />
+        <AssociationConnector Association="GospeLInnModel.FK_Events_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="GospeLInnModel.FK_UserGroups_Groups" ManuallyRouted="false" />
+        <AssociationConnector Association="GospeLInnModel.FK_Media_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="GospeLInnModel.FK_Users_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="GospeLInnModel.FK_UserGroups_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="GospeLInnModel.FK_Media_Groups" />
+        <EntityTypeShape EntityType="GospeLInnModel.Message" Width="1.5" PointX="5.25" PointY="9" />
+        <AssociationConnector Association="GospeLInnModel.FK_Meassage_Users" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

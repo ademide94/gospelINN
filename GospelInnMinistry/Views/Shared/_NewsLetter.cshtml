@@ -1,0 +1,83 @@
+﻿@model GospelInnMinistry.Models.NewsLetterViewModel
+
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+
+<script type="text/javascript">
+    function emailIsValid(email) {
+        return /^[^\s@@]+@@[^\s@@]+\.[^\s@@]+$/.test(email)
+    }
+
+
+    $(document).on('click', '.Create', function () {
+      
+        var email = $('#Email').val();
+      
+   
+        if (emailIsValid(email))
+        {
+            document.getElementById("Email").style.borderColor = "";
+          
+            $.ajax({
+
+                type: "POST",
+         
+                url: '@Url.Action("NewsLetter", "Home")',
+
+                data:
+                {
+                    mail : email
+                    
+                }
+      ,
+                ContentType: ("application/json", true),
+
+                dataType: 'json',
+                success: function (response) {
+                    alert("Done!");
+                    $("#Email").val("")
+                },
+                failure: function (response) {
+                    alert("Failed, Try again!");
+                },
+
+                error: function (response, thrownError)
+                {
+                    alert("Sorry an error occurred, Try again!");
+                }
+
+            });
+        }
+
+
+        
+        else
+        {
+            alert("Please enter a valid email-address")
+            document.getElementById("Email").style.borderColor = "#FF0000";
+            return false
+        }
+
+
+    })
+
+</script>
+
+
+<span class="input-group-addon">@@</span>
+@Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+<span class="input-group-btn">
+    <button class="btn btn-primary glyphicon-cloud Create" type="button" value="Create">Go!</button>
+</span>
+
+
+
+
+
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,291 @@
+﻿@model GospelInnMinistry.Models.GroupEventViewModel
+
+@{
+    ViewBag.Title = "LivingVoices";
+}
+
+
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#toggle").click(function () {
+            var elem = $("#toggle").text();
+            if (elem == "Read More") {
+                //Stuff to do when btn is in the read more state
+                $("#toggle").text("Read Less");
+                $("#text").slideDown();
+            } else {
+                //Stuff to do when btn is in the read less state
+                $("#toggle").text("Read More");
+                $("#text").slideUp();
+            }
+        });
+    });
+</script>
+
+@*<div>
+    <h4>Group</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.GroupName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GroupName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Event.EventName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Event.EventName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>*@
+
+
+
+
+
+<!-- End Site Header -->
+<!-- Start Page Header -->
+<div class="page-header parallax clearfix" style="background-color:#333">
+    <div class="page-header-overlay" style="background-image:url();"></div>
+    <div class="title-subtitle-holder">
+        <div class="title-subtitle-holder-inner">
+            <h2>Living Voices</h2>
+            @*<hr class="sm">
+                <span class="subtitle">Way to show what is going on in our church</span>*@
+        </div>
+    </div>
+</div>
+<!-- End Page Header -->
+<!-- Breadcrumbs -->
+<div class="lgray-bg breadcrumb-cont">
+    <div class="container">
+        <ol class="breadcrumb">
+            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+            <li class="active">LivingVoices</li>
+        </ol>
+    </div>
+</div>
+<!-- Start Body Content -->
+<div class="main" role="main">
+    <div id="content" class="content full">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="posts-listing">
+                        <article class="post-list-item format-standard">
+                            <div class="post-media">
+                                <a ><img src="../images/branches/DSC_0942.JPG" alt="" class="post-thumb"></a>
+                            </div>
+                            <div class="post-excerpt">
+
+                                <p align="center">
+                                    <strong> </strong>
+                                </p>
+
+                                <p>
+                                    The Living Voices Ministry is the music arm of Gospel Inn Ministry. The
+                                    ministry is as old as Gospel inn ministry. God gave a vision several years
+                                    ago.
+                                </p>
+                                <p>
+                                    A big tree stood and under the tree was a keyboard set on a table. The
+                                    keyboard on its own accord was playing a tune and multitudes were coming to
+                                    this keyboard.
+                                </p>
+
+
+
+                                <div id="text" style="display:none"   >
+                                    <ul>
+                                        <li>
+                                            It means that this commission is a towering living tree with a
+                                            supernatural shade capable of giving cover to multitudes
+                                        </li>
+                                        <li>
+                                            The ingathering of multitudes for the ultimate and uttermost purpose of
+                                            discipleship is a core content of this commission.
+                                        </li>
+                                        <li>
+                                            Spirit-led-singing and good music is a chief instrument by which God
+                                            will protect and keep revival.
+                                        </li>
+                                    </ul>
+                                <p>
+                                    <strong>Therefore,</strong>
+                                </p>
+                                <ul>
+                                    <li>
+                                        We place gifted singers with great integrity in their place but don’t
+                                        give gap as much as possible.
+                                    </li>
+                                    <li>
+                                        We mentor singers who will dress in pure linen (righteousness) and will
+                                        cherish oil and skill.
+                                    </li>
+                                </ul>
+                                <p>
+                                    <strong>FELISO MUSIC MANDATE</strong>
+                                </p>
+                                <p>
+                                    <u>FELISO:</u>
+                                    is an acronym for Festival of Living Songs.
+                                </p>
+                                <p>
+                                    FELISO is the mandate, philosophy of the music ministry of the Gospel inn
+                                    ministries.
+                                </p>
+                                <p>
+                                    FELISO speaks of the spirit of our music.
+                                </p>
+                                <p>
+                                    <strong>FESTIVAL OF LIVING SONG (FELISO).</strong>
+                                </p>
+                                <p>
+                                    A.
+                                </p>
+                                <ul>
+                                    <li>
+                                        <u>Our songs and music are festive</u>
+                                        in spirit. The mood of our music celebrates the king-Jesus in our
+                                        events. Our celebration deemphasizes lavish self-indulgence or
+                                        self-entertainment. We pour out to the king genuine praises, sincere
+                                        worship, “He is our rapture”.
+                                    </li>
+                                    <li>
+                                        We strongly celebrate the king: we worship deeply.
+                                    </li>
+                                    <li>
+                                        Our carriage portrays the joy of celebrants who rejoice in their king.
+                                    </li>
+                                    <li>
+                                        No event is common because of the king.
+                                    </li>
+                                </ul>
+                                <p>
+                                    B.
+                                </p>
+                                <ul>
+                                    <li>
+                                        <u>LIVING SONGS: </u>
+                                        our songs are alive. We connect heaven when we sing so:
+                                    </li>
+                                    <li>
+                                        we breathe grace as we sing through <u>the help of the Holy Spirit</u>
+                                    </li>
+                                    <li>
+                                        Our songs by grace carry the living touch of the Holy Spirit. It is Him
+                                        and through Him in all songs.
+                                    </li>
+                                    <li>
+                                        <u> We sing to Him,</u>
+                                        we <u>reach out through Him</u> - touching lives through Him with
+                                        salvation, deliverance, healing, and prophetic exhortation.
+                                    </li>
+                                    <li>
+                                        We train, we equip, we improve and we wait on Him.
+                                    </li>
+                                    <li>
+                                        We celebrate FELISO every year and many lives have been blessed.
+                                    </li>
+                                </ul>
+                                <p>
+                                    <strong> </strong>
+                                </p>
+                                <p>
+                                    <strong> </strong>
+                                </p>
+                                <p>
+                                    <strong> </strong>
+                                </p>
+                                <p>
+                                    <strong>MENTORS OF LIVING VOICES</strong>
+                                </p>
+                                <p>
+                                    We have three mentors in ministry.
+                                </p>
+                                <p>
+                                    1. Evang/Mrs Ugbede Abu Hill City Music
+                                </p>
+                                <p>
+                                    2. Pst/Mrs Sam Praise Shekina Clouds
+                                </p>
+                                <p>
+                                    3. Pst/Mrs Simon Sunday
+                                </p>
+
+
+
+
+                                </div>
+                           
+                            <div class="btn-container">
+                                <a id="toggle">Read More</a>
+                            </div>
+
+                     
+                         
+
+                               
+                            </div>
+                        </article>
+      
+                        <div> @{Html.RenderPartial("_UpcomingEvents", Model._event);}   </div>
+                    </div>
+
+                </div>
+                <div class="col-md-4">
+
+
+                    <div class="tabs">
+
+                        <ul class="nav nav-tabs">
+                            <li class="active"> <a data-toggle="tab" href="#sampletab1">PICTURES</a> </li>
+                            <li class=""> <a data-toggle="tab" href="#sampletab2">EXCOS</a> </li>
+                            @*<li class="active"> <a data-toggle="tab" href="#sampletab3"> Sample Tab #3 </a> </li>*@
+                        </ul>
+                        <div class="tab-content">
+                            <div id="sampletab1" class="tab-pane active">
+                                @{Html.RenderPartial("_PhotoGallery", Model._grouppictures);}
+
+                                @Html.ActionLink("More pictures", "Gallery", "Media")
+                            </div>
+                            <div id="sampletab2" class="tab-pane">
+                                .....
+                            </div>
+                            @*<div id="sampletab3" class="tab-pane active">
+                <p>3</p>
+            </div>*@
+                            @*</div>*@
+
+
+
+                        </div>
+                    </div>
+            </div>
+          
+
+        </div>
+    </div>
+</div>
+<!-- End Body Content -->

@@ -1,0 +1,107 @@
+﻿@model IEnumerable<GospelInnMinistry.Models.Event>
+ 
+
+    <!-- End Site Header -->
+    <!-- Start Page Header -->
+    <div class="page-header parallax clearfix" style="background-image:url(http://placehold.it/1200x300&amp;text=IMAGE+PLACEHOLDER);">
+        <div class="title-subtitle-holder">
+            <div class="title-subtitle-holder-inner">
+                <h2>Events</h2>
+            </div>
+        </div>
+    </div>
+    <!-- End Page Header -->
+    <!-- Breadcrumbs -->
+    <div class="lgray-bg breadcrumb-cont">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                <li class="active">Events</li>
+            </ol>
+        </div>
+    </div>
+    <!-- Start Body Content -->
+    <div class="main" role="main">
+        <div id="content" class="content full">
+            <div class="container">
+                <div class="row">
+               
+                        <div class="element-block events-listing">
+                            <div class="events-listing-header">
+                                <ul class="sort-source" data-sort-id="events" data-option-key="filter">
+                                    @*<li data-option-value="*" class="active"><a href="#">Show All</a></li>*@
+                                    @*<li data-option-value=".fests" class=""><a href="#">Fests</a></li>
+                                    <li data-option-value=".meetings" class=""><a href="#">Meetings</a></li>
+                                    <li data-option-value=".prayers" class=""><a href="#">Prayers</a></li>
+                                    <li data-option-value=".celebrations" class=""><a href="#">Celebrations</a></li>*@
+                                </ul>
+                            </div>
+
+                            <ul class="events-listing-content sort-destination isotope-events isotope" data-sort-id="events" style="position: relative; overflow: hidden; height: 524px;">
+                            
+                                   
+
+
+                                        @foreach (var item in Model)
+                                        {
+                                            <li class="event-list-item event-dynamic grid-item  isotope-item" style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1); opacity: 1;">
+
+
+                                                <div class="event-list-item event-dynamic">
+                                                    <div class="event-list-item-date">
+                                                        <span class="event-date">
+                                                            <span class="event-day">@Html.DisplayFor(modelItem => item.StartDate.Value.Day)</span>
+                                                            <span class="event-month">@Html.DisplayFor(modelItem => item.StartDate.Value.Month)/ @Html.DisplayFor(modelItem => item.StartDate.Value.Year)</span>
+                                                        </span>
+                                                    </div>
+                                                    <div class="event-list-item-info">
+                                                        <div class="lined-info">
+                                                            <h4 class="event-title"  >@Html.DisplayFor(modelItem => item.EventName)</h4>
+                                                        </div>
+                                                        <div class="lined-info">
+                                                            @*<span class="meta-data"><i class="fa fa-clock-o"></i><span class="event-time">@Html.DisplayFor(modelItem => item.StartDate.ToString())</span></span>*@
+                                                        </div>
+                                                        <div class="lined-info event-location">
+                                                            <span class="meta-data"><i class="fa fa-map-marker"></i> <span class="event-location-address">@Html.DisplayFor(modelItem => item.Location)</span></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="event-list-item-actions">
+                                                        @Html.ActionLink("Details", "ViewEvent", new { id = item.Id }) 
+                                                        @*<a href="#" class="btn btn-default btn-transparent event-tickets event-register-button">Register</a>*@
+                                                        <ul class="action-buttons">
+                                                            <li title="Share event"><a href="" data-trigger="focus" data-placement="top" data-content="" data-toggle="popover" data-original-title="Share Event" class="event-share-link"><i class="icon-share"></i></a></li>
+                                                            @*<li title="Get directions" class="hidden-xs"><a href="#" class="cover-overlay-trigger event-direction-link"><i class="icon-compass"></i></a></li>
+                                                                <li title="Contact event manager"><a href="#" data-toggle="modal" data-target="#Econtact" class="event-contact-link"><i class="icon-mail"></i></a></li>*@
+                                                        </ul>
+                                                    </div>
+                                                </div>
+
+                                            </li>  }
+
+
+
+
+
+                            </ul>
+                        </div>
+
+             
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    
+@*<script src="js/jquery-2.0.0.min.js"></script> <!-- Jquery Library Call -->
+<script src="vendor/prettyphoto/js/prettyphoto.js"></script> <!-- PrettyPhoto Plugin -->
+<script src="js/helper-plugins.js"></script> <!-- Helper Plugins -->
+<script src="js/bootstrap.js"></script> <!-- UI -->
+<script src="js/init.js"></script> <!-- All Scripts -->
+<script src="vendor/flexslider/js/jquery.flexslider.js"></script> <!-- FlexSlider -->
+<script src="vendor/countdown/js/jquery.countdown.min.js"></script> <!-- Jquery Timer -->
+<script src="vendor/mediaelement/mediaelement-and-player.min.js"></script> <!-- MediaElements -->
+<script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>*@
+
+

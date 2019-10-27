@@ -1,0 +1,162 @@
+﻿
+ 
+
+
+
+@model IEnumerable<GospelInnMinistry.Models.Medium>
+
+<script src="~/js/jquery-2.0.0.min.js"></script>
+
+
+
+
+<div class="page-header parallax clearfix" style="background-image:url(http://placehold.it/1200x300&amp;text=IMAGE+PLACEHOLDER);">
+    <div class="title-subtitle-holder">
+        <div class="title-subtitle-holder-inner">
+            <h2>Vedios</h2>
+        </div>
+    </div>
+</div>
+<!-- End Page Header -->
+<!-- Breadcrumbs -->
+<div class="lgray-bg breadcrumb-cont">
+    <div class="container">
+        <ol class="breadcrumb">
+            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+            <li class="active">Vedios</li>
+        </ol>
+    </div>
+</div>
+<!-- Start Body Content -->
+<div class="main" role="main">
+    <div id="content" class="content full">
+        <div class="container">
+			<div class="row">
+
+				<p>
+					You can visit our Youtube Channel for our list of Sermons : <a href="https://www.youtube.com/playlist?list=PLwdUtiL3WbOIWkoNE2oKZdQqhQSKm4z5A">GOSPEL INN YOUTUBE CHANNEL</a>
+				</p>
+
+				<hr />
+
+
+				@*<div class="col-md-4">
+
+		</div>*@
+
+				@{
+					if (ViewBag.AData == 0)
+					{
+
+
+						<iframe id="frame1"  style=" width:100%;  height:80vh" src="https://www.youtube-nocookie.com/embed/videoseries?list=PLwdUtiL3WbOIWkoNE2oKZdQqhQSKm4z5A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+					}
+					else
+					{
+						<iframe id="frame2" style=" width:100%;  height:80vh" src="@ViewBag.AUrl" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+					}
+				}
+
+				<hr/>
+				<div class="panel panel-info">
+					<div class="panel-heading">List</div>
+					<div class="panel-body" style="overflow-x:scroll!important;height:300px!important;">
+
+
+
+						<table id="mytable" class="table table-bordered table-condensed table-responsive  table-hover table-striped">
+
+							@foreach (var item in Model)
+							{
+
+
+								<tr>
+
+									<td align="left" style="padding-left:20px;background-color:gray; color:whitesmoke" class="col-md-8">
+
+										<h3 style="color:whitesmoke">@Html.DisplayFor(modelItem => item.MediaName) </h3>
+
+										@*<p style="text-overflow: ellipsis; white-space: nowrap; overflow: hidden;"> @Html.DisplayFor(modelItem => item.VedioDesciption) </p>*@
+
+
+									</td>
+									<td class="col-md-4">
+										@Html.DisplayFor(modelItem => item.VedioPreacher)
+										<br />
+										<small>
+											@Html.DisplayFor(modelItem => item.DateCreated) |
+											@Html.DisplayFor(modelItem => item.Group.GroupName)
+										</small>
+
+
+
+										<input type="submit" title="Select" value="Select" onclick="location.href='@Url.Action("PlayVedio", "Media", new { Id = item.Id })'" />
+
+
+									</td>
+
+								</tr>
+
+							}
+
+						</table>
+
+
+
+
+
+
+
+					</div>
+
+
+					<div class="panel-footer">
+
+
+
+
+					</div>
+				</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				@*<div class="col-md-4">
+
+		</div>*@
+
+
+			</div>
+			</div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+  
+@*<a class="embedly-card" data-card-controls="0" data-card-theme="dark" href="https://www.youtube.com/playlist?list=PLwdUtiL3WbOIWkoNE2oKZdQqhQSKm4z5A">test - YouTube</a>
+    <script async src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
+
+    <iframe height="400" width="400"  src="https://www.youtube.com/embed/videoseries?list=PLwdUtiL3WbOIWkoNE2oKZdQqhQSKm4z5A" ></iframe>*@
+
+
+

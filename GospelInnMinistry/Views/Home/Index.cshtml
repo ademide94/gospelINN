@@ -1,0 +1,225 @@
+﻿@model GospelInnMinistry.Models.GroupEventViewModel
+
+
+
+
+
+  <!-- Start Hero Slider -->
+<div class="hero-slider heroflex flexslider clearfix" data-autoplay="yes" data-pagination="no" data-arrows="yes" data-style="fade" data-speed="7000" data-pause="yes">
+    <ul class="slides">
+        <li class="parallax" style="background-image:url(../images/DSC_0631.JPG); opacity: 0.6;">
+            <div class="flex-caption" data-appear-animation="fadeInRight" data-appear-animation-delay="500">
+                <strong>God is word</strong>
+                <p> John 1:1 In the beginning was the Word, and the Word was with God, and the Word was God.
+</p>
+            </div>
+        </li>
+        <li class="parallax" style="background-image:url(../images/DSC_0976.JPG); opacity: 0.6;">
+            <div class="flex-caption" data-appear-animation="fadeInRight" data-appear-animation-delay="500">
+                <strong> Exodus 29:45</strong>
+                <p> I will dwell among the sons of Israel and will be their God. </p>
+            </div>
+        </li>
+    </ul>
+    <canvas id="canvas-animation"></canvas>
+</div>
+<!-- End Hero Slider -->
+<div class="upcoming-event-bar event-dynamic">
+    <div class="container">
+
+        @{Html.RenderPartial("_Counter",Model._eventSingle);} 
+
+    </div>
+</div>
+<!-- Lead Content -->
+<div class="lead-content clearfix">
+    <div class="lead-content-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-4 featured-block">
+<h3 style="text-align:center" > Our Story</h3>
+                    <figure>@*<img src="~/images/download.jpg" height="500" with="800" alt="Our Story" />*@
+                       
+
+                         
+                        
+                        <a href="~/Home/About"><img src="~/images/resize.jpg"  height="500"    width="800" alt="Our Story" /></a>
+                    </figure>
+                    <p style="text-align:justify"> On the 13th January 1990, Gospel Inn Ministry was planted as Christian Life Fellowship in R C M Primary School Ugwolawo with less than 20 people...
+</p>
+                </div>
+                <div class="col-md-4 col-sm-4 featured-block">
+                    <h3>Gospel Inn Mission and Vision</h3>
+                    <figure>
+                     
+                        <a href="~/Home/About"><img src="~/images/ttttt.png" height="500" width="800"  alt="Gospel Inn Mission and Vision"></a>
+                    </figure>
+               
+                    <p style="text-align:justify">Translating the story of the Good Samaritan into practical ministry tools and Releasing Destinies and Reviving Nations </p>
+                </div>
+                <div class="col-md-4 col-sm-4 featured-block">
+                    <h3 style="text-align:center">Be A Patner</h3>
+                    <figure>
+                        <a href="/Home/Contact"><img src="http://placehold.it/800x600&amp;text=PATNER" alt="Be A Patner"></a>
+                    </figure>
+                    <p style="text-align:justify">Be a patner with Gospel Inn and Support Us. God bless Us as you do so</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Start Body Content -->
+<div class="main" role="main">
+	<div id="content" class="content full">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-sm-6">
+					<div class="widget latest_sermons_widget">
+						<ul>
+							@{Html.RenderPartial("_LatestVedio", Model._LatestVedio);}
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-6 col-sm-6">
+
+					@{Html.RenderPartial("_UpcomingEvents", Model._event);}
+
+				</div>
+			</div>
+		</div>
+		<div class="spacer-30"></div>
+		<div class="lgray-bg padding-tb45">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<h3>Our Branches</h3>
+						<hr class="sm">
+						<div class="row">
+							@{Html.RenderPartial("_Branches", Model._groups);}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		@*<div class="lgray-bg padding-tb45">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<h3>Our Branches</h3>
+						<hr class="sm">
+						<div class="row">
+							<div class="col-md-4">
+								<div class="very-latest-post format-standard">
+									<div class="title-row">
+										<a href="blog-post.html#comments" class="comments-go" title="10 comments"><i class="icon-dialogue-text"></i></a>
+										<h4>Very latest</h4>
+									</div>
+									<a href="blog-post.html" class="media-box post-thumb">
+										<img src="http://placehold.it/800x500&amp;text=IMAGE+PLACEHOLDER" alt="">
+									</a>
+									<h3 class="post-title"><a href="blog-post.html">Don't run behind the charm</a></h3>
+									<div class="meta-data">by <a href="#">imithemes</a> on 25th August, 2014 in <a href="#">General</a></div>
+									<p>Nulla consequat massa quis enim.Donec pede justo, fringilla vel, aliquet nec, Nulla consequat massa quis enim.Donec pede justo, fringilla vel, aliquet nec vulputate nulla consequat massa quis enim.Donec pede justo, fringilla vel, aliquet nec, Nulla consequat massa quis enim.Donec pede justo, fringilla vel, aliquet nec vulputate eget...</p>
+									<p><a href="blog-post.html" class="btn btn-primary">Continue reading</a></p>
+								</div>
+							</div>
+							<div class="col-md-8">
+								<ul class="blog-classic-listing">
+									<li class="format-standard">
+										<div class="row">
+											<div class="col-md-4">
+												<a href="blog-post.html" class="media-box post-thumb">
+													<img src="http://placehold.it/800x500&amp;text=IMAGE+PLACEHOLDER" alt="">
+												</a>
+											</div>
+											<div class="col-md-8">
+												<a href="blog-post.html"><strong class="post-title">Don't run behind the charm</strong></a>
+												<div class="meta-data">by <a href="#">imithemes</a> on 25th August, 2014 in <a href="#">General</a></div>
+												<p>Nulla consequat massa quis enim.Donec pede justo, fringilla vel, aliquet nec, vulputate eget...</p>
+												<p><a href="blog-post.html" class="basic-link">Continue reading</a></p>
+											</div>
+										</div>
+									</li>
+									<li class="format-standard">
+										<div class="row">
+											<div class="col-md-4">
+												<a href="blog-post.html" class="media-box post-thumb">
+													<img src="http://placehold.it/800x500&amp;text=IMAGE+PLACEHOLDER" alt="">
+												</a>
+											</div>
+											<div class="col-md-8">
+												<a href="blog-post.html"><strong class="post-title">Robin Williams: The death of our captain</strong></a>
+												<div class="meta-data">by <a href="#">imithemes</a> on 12th August, 2014 in <a href="#">General</a></div>
+												<p>Nulla consequat massa quis enim.Donec pede justo, fringilla vel, aliquet nec, vulputate eget...</p>
+												<p><a href="blog-post.html" class="basic-link">Continue reading</a></p>
+											</div>
+										</div>
+									</li>
+									<li class="format-standard">
+										<div class="row">
+											<div class="col-md-4">
+												<a href="blog-post.html" class="media-box post-thumb">
+													<img src="http://placehold.it/800x500&amp;text=IMAGE+PLACEHOLDER" alt="">
+												</a>
+											</div>
+											<div class="col-md-8">
+												<a href="blog-post.html"><strong class="post-title">EPPN: It’s Time For Prison Reform</strong></a>
+												<div class="meta-data">by <a href="#">imithemes</a> on 31st July, 2014 in <a href="#">General</a></div>
+												<p>Nulla consequat massa quis enim.Donec pede justo, fringilla vel, aliquet nec, vulputate eget...</p>
+												<p><a href="blog-post.html" class="basic-link">Continue reading</a></p>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>*@
+	</div>
+</div>
+<!-- End Body Content -->
+<!-- Gallery updates -->
+<div class="gallery-updates cols5 clearfix">
+    <ul>
+        <li class="format-image"><a href="~/images/gallery/DSC_1060.JPG" data-rel="prettyPhoto" class="media-box"><img src="~/images/gallery/DSC_1060.JPG" alt=""/>
+            </a></li> 
+        <li class="format-standard">
+            <div class="flexslider galleryflex" data-autoplay="yes" data-pagination="yes" data-arrows="no" data-style="slide" data-pause="yes">
+                <ul class="slides">
+                    <li class="item"><a href="~/images/gallery/DSC_0042.JPG" data-rel="prettyPhoto[postname1]"><img src="~/images/gallery/DSC_0042.JPG" alt="" />
+                        </a></li>
+                    <li class="item"><a href="~/images/gallery/DSC_7378.JPG" data-rel="prettyPhoto[postname1]"><img src="~/images/gallery/DSC_7378.JPG" alt="" />
+                        </a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="format-image"><a href="~/images/gallery/DSC_0938.JPG" data-rel="prettyPhoto" class="media-box"><img src="~/images/gallery/DSC_0938.JPG" alt="" />
+            </a></li>
+        <li class="format-standard">
+            <div class="flexslider galleryflex" data-autoplay="yes" data-pagination="yes" data-arrows="no" data-style="fade" data-speed="4000" data-pause="yes">
+                <ul class="slides">
+                    <li class="item"><a href="~/images/gallery/DSC_0672.JPG" data-rel="prettyPhoto[postname2]"> <img src="~/images/gallery/DSC_0672.JPG" alt="" />
+                        </a></li>
+                    <li class="item"><a href="~/images/gallery/DSC_0166.JPG" data-rel="prettyPhoto[postname2]"><img src="~/images/gallery/DSC_0166.JPG" alt="" />
+                        </a></li>
+                </ul>
+            </div>
+        </li>
+          <li class="item"><a href="~/images/gallery/DSC_0672.JPG" data-rel="prettyPhoto[postname2]"> <img src="~/images/gallery/DSC_0672.JPG" alt="" />
+                               </a></li>
+        @*<li class="format-video"><a href="http://vimeo.com/37540860" data-rel="prettyPhoto" class="media-box"><img src="http://placehold.it/600x600&amp;text=IMAGE+PLACEHOLDER" alt=""></a></li>*@
+    </ul>
+    <div class="gallery-updates-overlay">
+        <div class="container">
+            <i class="icon-multiple-image"></i>
+            <h2>Updates from our gallery</h2>
+        </div>
+    </div>
+</div>
+
+
+

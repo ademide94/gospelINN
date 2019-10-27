@@ -1,0 +1,145 @@
+﻿@model GospelInnMinistry.Models.GroupEventViewModel
+
+@{
+    ViewBag.Title = "VineDrama";
+}
+
+
+
+@*<div>
+    <h4>Group</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.GroupName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GroupName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Event.EventName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Event.EventName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>*@
+
+
+
+
+<!-- End Site Header -->
+<!-- Start Page Header -->
+<div class="page-header parallax clearfix" style="background-color:#333">
+    <div class="page-header-overlay" style="background-image:url();"></div>
+    <div class="title-subtitle-holder">
+        <div class="title-subtitle-holder-inner">
+            <h2>Vine Drama</h2>
+            @*<hr class="sm">
+                <span class="subtitle">Way to show what is going on in our church</span>*@
+        </div>
+    </div>
+</div>
+<!-- End Page Header -->
+<!-- Breadcrumbs -->
+<div class="lgray-bg breadcrumb-cont">
+    <div class="container">
+        <ol class="breadcrumb">
+            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+            <li class="active">Vine Drama</li>
+        </ol>
+    </div>
+</div>
+<!-- Start Body Content -->
+<div class="main" role="main">
+    <div id="content" class="content full">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="posts-listing">
+                        <article class="post-list-item format-standard">
+                            <div class="post-media">
+                                
+                                <a ><img src="../images/branches/DSC_7375.JPG" alt="" class="post-thumb"></a>
+                            </div>
+                            <div class="post-excerpt">
+
+                          
+                                <p>
+                                <p>Vine drama ministry is a subsidiary of the Gospel Inn ministry: Reaching out to both the saved and unsaved people with the message of our Lord Jesus Christ.</p>
+                            
+                                <p>Engaging in;</p>
+                                <ul>
+                                    <li>Rural outreaches</li>
+                                    <li>Drama Fiesta (Quarterly)</li>
+                                    <li>Secondary School Outreaches, Church and community crusades via powerful play let, Drama and Music.</li>
+                                </ul>
+                                <p>The group also takes movies projects. So far two movies have been released:-</p>
+                                <ul>
+                                    <li>Ufedo Ki Tule (the Ultimate Love)</li>
+                                    <li>Akpunalu ( Fire extinguisher)</li>
+                                </ul>
+                                <p>Because of the primary audience within our environment, the two movies so far are in Igala language, more projects are on hand. New releases are on the way.</p>
+                                <p>The Motto of the group is <strong><em>&ldquo;Look and Live&rdquo;: </em></strong></p>
+                                </p>
+
+
+
+                            </div>
+                        </article>
+
+                        <div> @{Html.RenderPartial("_UpcomingEvents", Model._event);}   </div>
+                    </div>
+
+                </div>
+                <div class="col-md-4">
+                    <div class="tabs">
+
+                        <ul class="nav nav-tabs">
+                            <li class="active"> <a data-toggle="tab" href="#sampletab1">PICTURES</a> </li>
+                            <li class=""> <a data-toggle="tab" href="#sampletab2">EXCOS</a> </li>
+                            @*<li class="active"> <a data-toggle="tab" href="#sampletab3"> Sample Tab #3 </a> </li>*@
+                        </ul>
+                        <div class="tab-content">
+                            <div id="sampletab1" class="tab-pane active">
+                                @{Html.RenderPartial("_PhotoGallery", Model._grouppictures);}
+                                @Html.ActionLink("More pictures", "Gallery", "Media")
+                            </div>
+                            <div id="sampletab2" class="tab-pane">
+                                .....
+                            </div>
+                            @*<div id="sampletab3" class="tab-pane active">
+                <p>3</p>
+            </div>*@
+                            @*</div>*@
+
+
+
+                        </div>
+
+
+
+                    </div>
+            </div>
+          
+
+        </div>
+    </div>
+</div>
+<!-- End Body Content -->

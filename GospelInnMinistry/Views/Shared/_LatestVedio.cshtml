@@ -1,0 +1,39 @@
+﻿@model GospelInnMinistry.Models.Medium
+
+ 
+
+
+
+
+
+
+
+	<h3>Recent Sermons</h3>
+	<hr class="sm">
+	<div class="latest-sermon-video fw-video">
+		<iframe id="frame2"  src="@Model.ContentLocation" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+ 
+	</div>
+	<div class="latest-sermon-content">
+		<h4>@Model.MediaName</h4>
+		<div class="meta-data">by @Model.VedioPreacher </div>
+		<p style="text-wrap:avoid">@Model.VedioDesciption</p>
+	</div>
+	<div class="sermon-links">
+		<ul class="action-buttons">
+			 
+
+			<li><a href="@Url.Action(
+            actionName: "PlayVedio",
+            controllerName: "Media",
+            routeValues: new { id = Model.Id })" data-toggle="tooltip" data-placement="right" data-original-title="Watch Video"><i class="icon-video-cam"></i></a></li>
+			<li><a href="@Url.Action(
+            actionName: "Vedios",
+            controllerName: "Media",
+            routeValues: new { id = Model.Id })" data-toggle="tooltip" data-placement="right" data-original-title="All Vedios"><i class="icon-video-cam"></i></a></li>
+			@*@Html.ActionLink("Watch", "Vedios", "Media", new { id = Model.Id })*@
+			@*@Html.ActionLink("All Sermons", "Vedios", "Media")*@
+		</ul>
+	</div>
+
+ 

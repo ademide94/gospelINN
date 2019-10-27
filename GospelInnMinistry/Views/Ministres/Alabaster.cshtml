@@ -1,0 +1,286 @@
+﻿@model GospelInnMinistry.Models.GroupEventViewModel
+
+
+@{
+    ViewBag.Title = "Alabaster";
+}
+
+
+
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+
+
+
+
+
+
+
+<script type="text/javascript"  >
+    $(document).ready(function () {
+        $("#toggle").click(function () {
+            var elem = $("#toggle").text();
+            if (elem == "Read More") {
+                //Stuff to do when btn is in the read more state
+                $("#toggle").text("Read Less");
+                $("#text").slideDown();
+            } else {
+                //Stuff to do when btn is in the read less state
+                $("#toggle").text("Read More");
+                $("#text").slideUp();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+@*<div>
+    <h4>Group</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.GroupName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GroupName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Event.EventName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Event.EventName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>*@
+
+
+<!-- End Site Header -->
+<!-- Start Page Header -->
+<div class="page-header parallax clearfix" style="background-color:#333">
+    <div class="page-header-overlay" style="background-image:url();"></div>
+    <div class="title-subtitle-holder">
+        <div class="title-subtitle-holder-inner">
+            <h2>Alabaster</h2>
+            @*<hr class="sm">
+                <span class="subtitle">Way to show what is going on in our church</span>*@
+        </div>
+    </div>
+</div>
+<!-- End Page Header -->
+<!-- Breadcrumbs -->
+<div class="lgray-bg breadcrumb-cont">
+    <div class="container">
+        <ol class="breadcrumb">
+            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+            <li class="active">Alabaster</li>
+        </ol>
+    </div>
+</div>
+<!-- Start Body Content -->
+<div class="main" role="main">
+    <div id="content" class="content full">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="posts-listing">
+                        <article class="post-list-item format-standard">
+                            <div class="post-media">
+                    
+                                <a ><img src="../images/branches/0e3220213_1399919368_womens-small-group.jpg" alt="" class="post-thumb"></a>
+                            </div>
+                            <div class="post-excerpt">
+
+                                <p align="center">
+                                    <strong>ALABASTER MANDATE</strong>
+                                </p>
+                                <p>
+                                    The Alabaster Vision was born in the year 1998. The objective of is to
+                                    create a platform where women and young ladies can explore the virtues of
+                                    brokenness, good character, strength and productivity. Our Alabaster
+                                    Mandate is taken from the book of Mark 14:3
+                                </p>
+                                <p>
+                                    <strong><u>The Alabaster</u></strong>
+                                    <u> </u>
+                                    is a beautiful flask (vase) that contains a precious ointment with the
+                                    following characteristics:
+                                </p>
+                                <ul>
+                                    <li>
+                                        It has a strong, sweet- smelling fragrance
+                                    </li>
+                                    <li>
+                                        It is a strong preservative usually used to prevent things from
+                                        decaying.
+                                    </li>
+                                    <li>
+                                        It is very costly and is usually sold at the price of a labourer’s
+                                        yearly wage.
+                                    </li>
+                                    <li>
+                                        The beautiful Alabaster vase has no lid, no opening. It must be broken
+                                        before the oil is poured out.
+                                    </li>
+                                    <li>
+                                        Women usually work hard to have Alabaster boxes as part of their
+                                        cosmetics.
+                                    </li>
+                                    <li>
+                                        No woman will break her Alabaster, except it is her wedding or at the
+                                        death of a loved one e.g. her father.
+                                    </li>
+                                </ul>
+
+                           
+                                <div id="text" style="display:none">
+                                 
+                                    <p>
+                                        Prophetically, every woman at every stage in life looks like the Alabaster.
+                                        For example;
+                                    </p>
+                                    <ul>
+                                        <li>
+                                            The beauty of the woman
+                                        </li>
+                                        <li>
+                                            The purity of the virgin
+                                        </li>
+                                        <li>
+                                            The innocence of the virgin
+                                        </li>
+                                        <li>
+                                            The woman’s pregnancies and births (spiritual and physical)
+                                        </li>
+                                    </ul>
+                                    <p>
+                                        The process of using the Alabaster is that it must be broken, else the
+                                        ointment remains trapped in the box. It takes brokenness to release all
+                                        that is within us.
+                                    </p>
+                                    <ul>
+                                        <li>
+                                            The Broken woman –Character
+                                        </li>
+                                        <li>
+                                            The Broken woman – Humility
+                                        </li>
+                                        <li>
+                                            The Broken woman – Prayer/worship
+                                        </li>
+                                        <li>
+                                            The Broken woman- Defender of her home
+                                        </li>
+                                        <li>
+                                            The Broken woman – a minister
+                                        </li>
+                                    </ul>
+                                    <p>
+                                        We trust God to use us as a vessel to teach, to heal and bring deliverance
+                                        to our girls and women.
+                                    </p>
+
+
+
+
+                                  </div>
+                            </div>
+                            <div class="btn-container">
+                                <a id="toggle">Read More</a>
+                            </div>
+                            <br/>
+                        </article>
+
+                        <div > @{Html.RenderPartial("_UpcomingEvents", Model._event);}   </div> 
+
+                    </div>
+
+                </div>
+                <div class="col-md-4 tabs">
+
+
+
+                    @*<div class="tabs">*@
+
+                        <ul class="nav nav-tabs">
+                            <li class="active"> <a data-toggle="tab" href="#sampletab1">PICTURES</a> </li>
+                            <li class=""> <a data-toggle="tab" href="#sampletab2">EXCOS</a> </li>
+                            @*<li class="active"> <a data-toggle="tab" href="#sampletab3"> Sample Tab #3 </a> </li>*@
+                        </ul>
+                        <div class="tab-content">
+                            <div id="sampletab1" class="tab-pane active">
+                               @{Html.RenderPartial("_PhotoGallery", Model._grouppictures);}   
+                                @Html.ActionLink("More pictures", "Gallery", "Media")
+                            </div>
+                            <div id="sampletab2" class="tab-pane">
+                                .....
+                            </div>
+                            @*<div id="sampletab3" class="tab-pane active">
+                                <p>3</p> 
+                            </div>*@
+                        @*</div>*@
+
+
+
+                    </div>
+
+
+
+
+
+
+
+                    @*<div class="widget sidebar-widget upcoming_events_widget">
+                        <h3 class="widgettitle">Upcoming Events</h3>
+                        <div class="events-listing-content smaller-cont">
+                            <div class="event-list-item">
+                                <div class="event-list-item-date">
+                                    <span class="event-date">
+                                        <span class="event-day">22</span>
+                                        <span class="event-month">Sep, 14</span>
+                                    </span>
+                                </div>
+                                <div class="event-list-item-info">
+                                    <div class="lined-info event-title">
+                                        <h4><a href="#">Water Baptism</a></h4>
+                                    </div>
+                                    <span class="meta-data"><i class="fa fa-clock-o"></i> Monday, 10:00 AM</span>
+                                    <span class="meta-data"><i class="fa fa-map-marker"></i> State Route, Madison US</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>*@
+                </div>
+            </div>
+
+   
+        
+         </div>
+    </div>
+</div>
+<!-- End Body Content -->
+
+
+
+
+

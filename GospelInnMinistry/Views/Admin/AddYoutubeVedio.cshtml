@@ -1,0 +1,146 @@
+﻿@model GospelInnMinistry.Models.MediumViewModel
+
+ 
+
+<div class="page-header parallax clearfix" style="background-image:url(http://placehold.it/1200x300&amp;text=IMAGE+PLACEHOLDER);">
+	<div class="title-subtitle-holder">
+		<div class="title-subtitle-holder-inner">
+			<h2>Add Vedio</h2>
+		</div>
+	</div>
+</div>
+<!-- End Page Header -->
+<!-- Breadcrumbs -->
+<div class="lgray-bg breadcrumb-cont">
+	<div class="container">
+		<ol class="breadcrumb">
+			<li>@Html.ActionLink("Home", "Index", "Home")</li>
+			<li>@Html.ActionLink("Admin Page", "Index", "Admin")</li>
+			<li class="active">Add Vedio</li>
+		</ol>
+	</div>
+</div>
+<!-- Start Body Content -->
+<div class="main" role="main">
+	<div id="content" class="content full">
+		<div class="container">
+			<div class="row">
+
+
+				@using (Html.BeginForm())
+				{
+					@Html.AntiForgeryToken()
+
+					<div class="form-horizontal">
+
+
+						@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+						<div class="form-group">
+							@Html.LabelFor(model => model.MediaName, htmlAttributes: new { @class = "control-label col-md-2" })
+							<div class="col-md-10">
+								@Html.EditorFor(model => model.MediaName, new { htmlAttributes = new { @class = "form-control" } })
+								@Html.ValidationMessageFor(model => model.MediaName, "", new { @class = "text-danger" })
+							</div>
+						</div>
+
+
+
+						<div class="form-group">
+							@Html.LabelFor(model => model.ContentLocation, htmlAttributes: new { @class = "control-label col-md-2" })
+							<div class="col-md-10">
+								@Html.EditorFor(model => model.ContentLocation, new { htmlAttributes = new { @class = "form-control", @placeholder = "https://www.youtube.com/embed/VEDIOCODE" } })
+								@Html.ValidationMessageFor(model => model.ContentLocation, "", new { @class = "text-danger" })
+							</div>
+						</div>
+
+
+
+						<div class="form-group">
+							@Html.LabelFor(model => model.groupId, htmlAttributes: new { @class = "control-label col-md-2" })
+							<div class="col-md-10">
+								@Html.DropDownListFor(model => model.groupId  , new List<SelectListItem>
+{
+
+   new SelectListItem{ Text="Strasoda", Value = "1" },
+   new SelectListItem{ Text="Living Voices", Value = "2" },
+   new SelectListItem{ Text="Alabaster", Value = "3" },
+   new SelectListItem{ Text="Gospel Inn Literature", Value = "4" },
+   new SelectListItem{ Text="Gospel Inn Children", Value = "5" },
+   new SelectListItem{ Text="Turning Point Radio", Value = "6" },
+   new SelectListItem{ Text="Vine Drama", Value = "7" },
+   new SelectListItem{ Text="Normal", Value = "8" },
+
+})
+
+								@Html.ValidationMessageFor(model => model.groupId, "", new { @class = "text-danger" })
+							</div>
+						</div>
+
+
+
+						<div class="form-group">
+							@Html.LabelFor(model => model.VedioPreacher, htmlAttributes: new { @class = "control-label col-md-2" })
+							<div class="col-md-10">
+								@Html.EditorFor(model => model.VedioPreacher, new { htmlAttributes = new { @class = "form-control" } })
+								@Html.ValidationMessageFor(model => model.VedioPreacher, "", new { @class = "text-danger" })
+							</div>
+						</div>
+
+						<div class="form-group">
+							@Html.LabelFor(model => model.VedioDesciption, htmlAttributes: new { @class = "control-label col-md-2" })
+							<div class="col-md-10">
+								@Html.EditorFor(model => model.VedioDesciption, new { htmlAttributes = new { @class = "form-control" } })
+								@Html.ValidationMessageFor(model => model.VedioDesciption, "", new { @class = "text-danger" })
+							</div>
+						</div>
+
+						<div class="form-group">
+							<div class="col-md-offset-2 col-md-10">
+								<input type="submit" value="Create" class="btn btn-default" />
+							</div>
+						</div>
+					</div>
+				}
+				<div class="form-group">
+					<div>
+
+						<div class="col-md-12 appear-animation bounceInRight appear-animation-visible" data-appear-animation="bounceInRight">
+							@{
+								if (ViewBag.Status == "Success")
+								{
+									<div class="alert alert-success fade in"> <a class="close" data-dismiss="alert" href="#">×</a> <strong>@ViewBag.Status</strong> YouTube Vedio saved Successfully </div>
+
+								}
+								else if (ViewBag.Status == "Error")
+								{
+									<div class="alert alert-error fade in"> <a class="close" data-dismiss="alert" href="#">×</a> <strong>@ViewBag.Status</strong> Something went Wrong! </div>
+
+								}
+
+							}
+						</div>
+
+
+					</div>
+				</div>
+				<div>
+					@Html.ActionLink("Back", "Index")
+				</div>
+
+
+
+
+
+
+
+
+
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+

@@ -1,0 +1,180 @@
+﻿@model GospelInnMinistry.Models.Event
+
+ 
+
+   <!-- End Site Header -->
+<!-- Start Page Header -->
+<div class="page-header parallax clearfix" style="background-image:url(http://placehold.it/1200x300&amp;text=IMAGE+PLACEHOLDER);">
+    <div class="title-subtitle-holder">
+        <div class="title-subtitle-holder-inner">
+            <h2>Event Details</h2>
+        </div>
+    </div>
+</div>
+<!-- End Page Header -->
+<!-- Breadcrumbs -->
+<div class="lgray-bg breadcrumb-cont">
+    <div class="container">
+        <ol class="breadcrumb">
+            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+            <li>@Html.ActionLink("Admin Page", "Index", "Admin")</li>
+            <li><a href="index.html">Events</a></li>
+            <li class="active">Event Details</li>
+        </ol>
+    </div>
+</div>
+<!-- Start Body Content -->
+<div class="main" role="main">
+    <div id="content" class="content full">
+        <div class="container">
+            <div class="row">
+
+                <h2>@Html.DisplayFor(model => model.EventName)</h2>
+                <hr />
+                <div>
+
+                    <dl class="dl-horizontal">
+
+                        <dt>
+                            @Html.Label("Description")
+                        </dt>
+
+                        <dd>
+
+                            @Html.DisplayFor(model => model.EventDescription)
+                        </dd>
+
+                        @{
+                            if (Model.EndDate == null)
+                            {
+
+                                <dt>
+                                    @Html.Label("Date")
+
+                                </dt>
+                                <dd>
+
+                                    @Html.DisplayFor(model => model.StartDate)
+                                </dd>
+                            }
+                            else
+                            {
+                                <dt>
+                                    @Html.Label("StartDate")
+
+                                </dt>
+                                <dd>
+
+                                    @Html.DisplayFor(model => model.StartDate)
+                                </dd>
+
+                                <dt>
+                                    @Html.Label("EndDate")
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.EndDate)
+                                </dd>
+
+
+                            }
+                        }
+
+
+
+
+
+
+                        <dt>
+                            @Html.Label("Location")
+
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Location)
+                        </dd>
+
+
+
+                        <dt>
+                            @Html.Label("Group")
+
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Group.GroupName)
+                        </dd>
+
+
+
+                    </dl>
+                </div>
+                <p>
+                    @Html.ActionLink("Back to List", "Index")
+                </p>
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@*<script src="js/jquery-2.0.0.min.js"></script> <!-- Jquery Library Call -->
+    <script src="vendor/prettyphoto/js/prettyphoto.js"></script> <!-- PrettyPhoto Plugin -->
+    <script src="js/helper-plugins.js"></script> <!-- Helper Plugins -->
+    <script src="js/bootstrap.js"></script> <!-- UI -->
+    <script src="js/init.js"></script> <!-- All Scripts -->
+    <script src="vendor/flexslider/js/jquery.flexslider.js"></script> <!-- FlexSlider -->
+    <script src="vendor/countdown/js/jquery.countdown.min.js"></script> <!-- Jquery Timer -->
+    <script src="vendor/mediaelement/mediaelement-and-player.min.js"></script> <!-- MediaElements -->
+    <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>*@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
