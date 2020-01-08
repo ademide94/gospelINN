@@ -6,21 +6,44 @@
 
   <!-- Start Hero Slider -->
 <div class="hero-slider heroflex flexslider clearfix" data-autoplay="yes" data-pagination="no" data-arrows="yes" data-style="fade" data-speed="7000" data-pause="yes">
-    <ul class="slides">
-        <li class="parallax" style="background-image:url(../images/DSC_0631.JPG); opacity: 0.6;">
-            <div class="flex-caption" data-appear-animation="fadeInRight" data-appear-animation-delay="500">
-                <strong>God is word</strong>
-                <p> John 1:1 In the beginning was the Word, and the Word was with God, and the Word was God.
-</p>
-            </div>
-        </li>
-        <li class="parallax" style="background-image:url(../images/DSC_0976.JPG); opacity: 0.6;">
-            <div class="flex-caption" data-appear-animation="fadeInRight" data-appear-animation-delay="500">
-                <strong> Exodus 29:45</strong>
-                <p> I will dwell among the sons of Israel and will be their God. </p>
-            </div>
-        </li>
-    </ul>
+	<ul class="slides">
+
+		@{
+
+			foreach (var item in ViewBag.SlidesImages)
+			{
+				<li class="parallax" style="background-image:url(../images/@item); opacity: 0.6;">
+					<div class="flex-caption" data-appear-animation="fadeInRight" data-appear-animation-delay="500">
+						<strong>God is word</strong>
+						<p>
+							John 1:1 In the beginning was the Word, and the Word was with God, and the Word was God.
+						</p>
+					</div>
+				</li>
+
+				@*<li class="parallax" style="background-image:url(../images/DSC_0631.JPG); opacity: 0.6;">
+					<div class="flex-caption" data-appear-animation="fadeInRight" data-appear-animation-delay="500">
+						<strong>God is word</strong>
+						<p>
+							John 1:1 In the beginning was the Word, and the Word was with God, and the Word was God.
+						</p>
+					</div>
+				</li>*@
+
+			}
+		}
+
+
+
+
+
+		@*<li class="parallax" style="background-image:url(../images/DSC_0976.JPG); opacity: 0.6;">
+			<div class="flex-caption" data-appear-animation="fadeInRight" data-appear-animation-delay="500">
+				<strong> Exodus 29:45</strong>
+				<p> I will dwell among the sons of Israel and will be their God. </p>
+			</div>
+		</li>*@
+	</ul>
     <canvas id="canvas-animation"></canvas>
 </div>
 <!-- End Hero Slider -->

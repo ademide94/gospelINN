@@ -19,13 +19,14 @@ namespace GospelInnMinistry.Controllers
         MessageRepo messageRepo = new MessageRepo();
 		MediaRepo mediaRepo = new MediaRepo();
 		GroupRepo groupRepo = new GroupRepo();
-		
+        SlideCode slideCode = new SlideCode();
 
-		public ActionResult Index()
+        public ActionResult Index()
         {
+            ViewBag.SlidesImages =  slideCode.getAllImages();
+
             groupVM = new GroupEventViewModel();
 			 
-
             groupVM._event = repo.getAllUpcomingEvents();
 
 			groupVM._LatestVedio = mediaRepo.getAllVedios().FirstOrDefault();
@@ -49,10 +50,19 @@ namespace GospelInnMinistry.Controllers
         public ActionResult Contact()
         {
             User user = new User();
-            user.FirstName = "Fred";
-            user.LastName = "Fred";
-            user.PhoneNumber = "09014671017";
-            user.Email = "i.i@yahoo.com";
+            if(User != null && User.Identity.IsAuthenticated)
+            {
+            user.FirstName = User.Identity.GetFirstName();
+            user.LastName = User.Identity.GetLastName() ;
+            user.PhoneNumber = User.Identity.GetMobileNumber(); ;
+            user.Email = User.Identity.Name;
+            }
+            else
+            {
+             
+            }
+
+
 
             SendEmailViewModel sendEmailViewModel;
             sendEmailViewModel = new SendEmailViewModel();
@@ -68,12 +78,17 @@ namespace GospelInnMinistry.Controllers
         public ActionResult Contact(SendEmailViewModel vm)
         {
             User user = new User();
-                    user.FirstName = "Fred";
-                    user.LastName = "Fred";
-                    user.PhoneNumber = "09014671017";
-                    user.Email = "i.i@yahoo.com";
+            user.FirstName = vm.FirstName;
+            user.LastName = vm.LastName;
+            user.Email = vm.Email;
+            user.PhoneNumber = vm.PhoneNumber;
+            //User user = new User();
+            //        user.FirstName = "Fred";
+            //        user.LastName = "Fred";
+            //        user.PhoneNumber = "09014671017";
+            //        user.Email = "i.i@yahoo.com";
 
-                    SendEmailViewModel sendEmailViewModel;
+            SendEmailViewModel sendEmailViewModel;
                     sendEmailViewModel = new SendEmailViewModel();
                     sendEmailViewModel.LoggedInUser = user;
             if (ModelState.IsValid)

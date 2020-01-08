@@ -59,6 +59,7 @@ namespace GospelInnMinistry.Controllers
         {
             ViewBag.ReturnUrl = returnUrl;
             return View();
+           
         }
 
         //
@@ -88,6 +89,7 @@ namespace GospelInnMinistry.Controllers
                 default:
                     ModelState.AddModelError("", "Invalid login attempt.");
                     return View(model);
+                    
             }
         }
 
@@ -151,7 +153,7 @@ namespace GospelInnMinistry.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { Address = model.Address, LastName = model.LastName , MobileNumber = model.MobileNumber , FirstName = model.FirstName ,  UserName = model.Email, Email = model.Email };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -387,8 +389,8 @@ namespace GospelInnMinistry.Controllers
 
         //
         // POST: /Account/LogOff
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+        [HttpGet]
+      //  [ValidateAntiForgeryToken]
         public ActionResult LogOff()
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);

@@ -8,6 +8,7 @@ using GospelInnMinistry.Models;
 using System.Net;
 using System.Configuration;
 using GospelInnMinistry.DAL;
+using System.IO;
 
 namespace GospelInnMinistry.CommonCode
 {
@@ -57,17 +58,21 @@ namespace GospelInnMinistry.CommonCode
                 {
                     smtp.UseDefaultCredentials = false;
 
-                    var credential = new NetworkCredential
-                    {
-                        UserName =    "ibrahim.ademide@gmail.com",//  "gospelinnministry9090@gmail.com",  // (ConfigurationManager.AppSettings.Get("GmailUserName")).ToString(),
-                        Password = "xj9,xj10" // "GOSPELINN9090"  // (ConfigurationManager.AppSettings.Get("GmailPassword")).ToString()
+					var credential = new NetworkCredential
+					{
+						UserName = "gospelinnministry9090@gmail.com" ,  // "ibrahim.ademide@gmail.com", // ,  // (ConfigurationManager.AppSettings.Get("GmailUserName")).ToString(),
+
+						Password = "GOSPELINN9090"   //"xj9,xj10" //   // (ConfigurationManager.AppSettings.Get("GmailPassword")).ToString()
                     };
 
                     smtp.Credentials = credential;
                     smtp.Host = "smtp.gmail.com";
-                    smtp.Port = 587;
+					smtp.Port = 465; // 587;
 					smtp.EnableSsl = true;
-			 
+					smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+					smtp.UseDefaultCredentials = false;
+
+
 
 					smtp.Send(message);
 
@@ -84,5 +89,20 @@ namespace GospelInnMinistry.CommonCode
             MessageRepo messageRepo = new MessageRepo();
             messageRepo.addMessage(message);
         }
+    }
+
+    public  class SlideCode
+    {
+        public string[] getAllImages ()
+        {
+            string[] filePaths = Directory.GetFiles(@"C:\Users\ademide.ibrahim\Documents\GospelInnMinistry (2)\GospelInnMinistry\GospelInnMinistry\images\HomePageSlide").Select(file => Path.GetFileName(file)).ToArray();
+
+            return filePaths;
+            //foreach (var item in filePaths)
+            //{
+               
+            //}
+        }
+       
     }
 }

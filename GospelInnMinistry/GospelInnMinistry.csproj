@@ -220,6 +220,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="CommonCode\EmailCode.cs" />
+    <Compile Include="CommonCode\IdentityCode.cs" />
     <Compile Include="CommonCode\VedioCode.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
@@ -241,6 +242,19 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001031130021_InitialCreate.cs" />
+    <Compile Include="Migrations\202001031130021_InitialCreate.Designer.cs">
+      <DependentUpon>202001031130021_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001061519506_Code.cs" />
+    <Compile Include="Migrations\202001061519506_Code.Designer.cs">
+      <DependentUpon>202001061519506_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001081019306_DefaultConnection.cs" />
+    <Compile Include="Migrations\202001081019306_DefaultConnection.Designer.cs">
+      <DependentUpon>202001081019306_DefaultConnection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Event.cs">
       <DependentUpon>GospelInnOnlineModel.tt</DependentUpon>
@@ -315,6 +329,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="images\HomePageSlide\DSC_0631.JPG" />
+    <Content Include="images\HomePageSlide\DSC_6752.JPG" />
     <Content Include="images\resize.jpg" />
     <Content Include="images\theimage.jpg" />
     <Content Include="images\branches\0e3220213_1399919368_womens-small-group.jpg" />
@@ -503,6 +519,7 @@
     <Content Include="Views\Admin\AddYoutubeVedio.cshtml" />
     <Content Include="Views\Shared\_LatestVedio.cshtml" />
     <Content Include="Views\Shared\_Branches.cshtml" />
+    <Content Include="Views\Account\LogOff.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -521,6 +538,17 @@
     <Folder Include="images\PicGallery\" />
     <Folder Include="media\" />
     <Folder Include="vendor\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202001031130021_InitialCreate.resx">
+      <DependentUpon>202001031130021_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001061519506_Code.resx">
+      <DependentUpon>202001061519506_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001081019306_DefaultConnection.resx">
+      <DependentUpon>202001081019306_DefaultConnection.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

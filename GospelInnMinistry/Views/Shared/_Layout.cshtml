@@ -1,4 +1,7 @@
 ﻿
+@using System.Security.Claims;
+@using System.Security.Principal;
+ @using GospelInnMinistry.CommonCode
 
 
 <!DOCTYPE HTML>
@@ -16,6 +19,7 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
     <meta name="format-detection" content="telephone=no">
 
+    
  
 
     @Styles.Render("~/css/bootstrap.css")
@@ -120,8 +124,6 @@
                                 <li>@Html.ActionLink("Campres", "CampressProject", "Ministres")</li>
                                 <li>@Html.ActionLink("Solid Rock Schools", "SolidRock", "Ministres")</li>
                                 <li>@Html.ActionLink("Shunem Guest Houses", "HossanaGuest", "Ministres")</li>
-                                
-
                             </ul>
                         </li>
 
@@ -216,16 +218,57 @@
                         </li>*@
                         <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                         <li>
-                            <a href="javascript:void(0)">Account</a>
-                            <ul class="dropdown">
-                                <li>@Html.ActionLink("Admin Page", "Index", "Admin")</li>
-                                <li><a href="events-grid.html">Sign Up</a></li>
-                                <li><a href="events.html">Login</a></li>
-                               
+                            @{
+								if (User != null && User.Identity.IsAuthenticated)
+								{
+                                                        <a href="javascript:void(0)">
+                                                                                          @{if (User.Identity.GetFirstName().Length > 10)
+                                                                {
+                                                                     @User.Identity.GetFirstName().Trim().Substring(0 , 10).Insert(10,"...") ;
 
-                            </ul>
-                        
-                        
+																		}
+																else
+																{
+                                                                    @User.Identity.GetFirstName().Trim().ToUpper();
+                                                                } } !
+                                                        </a>
+                                    <ul class="dropdown">
+                                        @{
+                                            if (User.IsInRole("Admin"))
+                                            {
+                                                <li>@Html.ActionLink("Admin Page", "Index", "Admin")</li>
+                                            }
+                                        }
+                                        <li>@Html.ActionLink("SignOut","LogOff", "Account")</li>
+
+
+
+
+                                    </ul>
+                                }
+                                else
+                                {
+                                    <a href="javascript:void(0)">Account</a>
+                                    <ul class="dropdown">
+                                        
+                                        <li>@Html.ActionLink("SignUp", "Register", "Account")</li>
+                                         
+                                           <li>@Html.ActionLink("Login", "Login", "Account")</li>
+                                      
+                                      
+
+
+
+
+                                    </ul>
+
+                                }
+
+
+
+                            }
+
+
                         </li>
                     </ul>
                 </nav>

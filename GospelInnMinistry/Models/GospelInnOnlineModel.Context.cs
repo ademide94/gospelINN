@@ -16,7 +16,10 @@ namespace GospelInnMinistry.Models
     public partial class DB_A4877A_gospelInnEntities : DbContext
     {
         public DB_A4877A_gospelInnEntities()
-            : base("name=DB_A4877A_gospelInnEntities")
+			 
+			//: base("name=GospeLInnEntities")
+   : base("name=DB_A4877A_gospelInnEntities")
+// : base ("name=DefaultConnection")
         {
         }
     
