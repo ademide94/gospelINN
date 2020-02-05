@@ -95,7 +95,7 @@ namespace GospelInnMinistry.CommonCode
     {
         public string[] getAllImages ()
         {
-            string[] filePaths = Directory.GetFiles(@"C:\Users\ademide.ibrahim\Documents\GospelInnMinistry (2)\GospelInnMinistry\GospelInnMinistry\images\HomePageSlide").Select(file => Path.GetFileName(file)).ToArray();
+            string[] filePaths = Directory.GetFiles(@"C:\Users\dell\Source\Repos\ademide94\gospelINN\GospelInnMinistry\images\HomePageSlide").Select(file => Path.GetFileName(file)).ToArray();
 
             return filePaths;
             //foreach (var item in filePaths)
